@@ -1,38 +1,201 @@
-.App {
+* {
   text-align: center;
+  padding: 0;
+  margin: 0;
+  color: white;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+html {
+  --gray01: hsl(0, 0%, 10%);
+  --gray02: hsl(0, 0%, 17%);
+  --green01: hsl(130, 100%, 55%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body {
+  background-color: var(--gray01);
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--gray01);
+}
+
+
+.manager {
+  background-color: var(--gray01);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 10rem 0rem;
+  height: 100%;
+  width: 100%;
+}
+
+@keyframes fadeUp {
+  0%   {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0rem);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.item {
+  background-color: var(--gray02);
+  width: 30rem;
+  padding: 1rem 2rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: flex-end;
+  animation: fadeUp 1s forwards;
+}
+
+.item--content {
+  padding-right: 3rem;
+  background-color: var(--gray02);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.item p {
+  font-size: 1.2rem;
+}
+
+.newItemButton {
+  background-color: var(--gray02);
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.addItemButton {
+  background-color: var(--gray01);
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 0.3rem;
+  animation: fadeUp 1s forwards;
+  cursor: pointer;
+}
+
+.removeItemButton {
+  background-color: var(--gray01);
+  border: 1px solid red;
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.editItemButton {
+  cursor: pointer;
+  background-color: var(--gray01);
+  border: 1px solid var(--green01);
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+/* NewItemForm ------------------------------------------------------------------------------ */
+
+.newItemForm {
+  width: 30rem;
+  padding: 1rem 2rem;
+  background-color: var(--gray02);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  animation: fadeUp 1s forwards;
+}
+
+.newItemForm--submit {
+  background-color: var(--gray01);
+  border: 1px solid var(--green01);
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.newItemform--cancel {
+  background-color: var(--gray01);
+  border: 1px solid red;
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.newItemForm--Input {
+  width: 12rem;
+  height: 2rem;
+  color: black;
+  margin-left: 1rem;
+}
+
+.newItemForm--Input--label {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* EditItemForm ------------------------------------------------------------------------------ */
+
+.editItemForm {
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: var(--gray02);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  animation: fadeUp 1s forwards;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.editItemForm--submit {
+  background-color: var(--gray01);
+  border: 1px solid var(--green01);
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.editItemform--cancel {
+  background-color: var(--gray01);
+  border: 1px solid red;
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.editItemForm--Input {
+  width: 12rem;
+  height: 2rem;
+  color: black;
+  margin-left: 1rem;
+}
+
+.editItemForm--Input--label {
+  color: white;
 }
